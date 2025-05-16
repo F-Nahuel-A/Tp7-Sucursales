@@ -78,13 +78,13 @@ namespace TP7_GRUPO_5
         protected global::System.Web.UI.WebControls.Button BtnBuscar;
 
         /// <summary>
-        /// Control ListView1.
+        /// Control LVSucursales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
+        protected global::System.Web.UI.WebControls.ListView LVSucursales;
 
         /// <summary>
         /// Control Sucursal.

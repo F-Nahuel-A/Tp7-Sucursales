@@ -19,6 +19,12 @@
         .auto-style4 {
             width: 463px;
         }
+        .auto-style7 {
+            width: 338px;
+        }
+        .auto-style9 {
+            width: 128px;
+        }
     </style>
 </head>
 <body>
@@ -43,8 +49,8 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style9">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -52,28 +58,34 @@
             </tr>
             <tr>
                 <td class="auto-style3">&nbsp;</td>
-                <td>
+                <td class="auto-style7">
                     <asp:Label ID="lblListadoDeSucursales" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Black" Text="Listado de sucursales"></asp:Label>
+                </td>
+                <td class="auto-style9">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style7">
+                    <asp:Label ID="LblBusqueda" runat="server" Text="Busqueda por nombre de sucursal:"></asp:Label>
+                </td>
+                <td class="auto-style9">
+                    <asp:TextBox ID="TxtBusqueda" runat="server" Height="22px"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" />
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style9">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -81,17 +93,11 @@
             </tr>
             <tr>
                 <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style7">
+                    <asp:ListView ID="ListView1" runat="server" DataSourceID="Sucursal">
+                    </asp:ListView>
+                </td>
+                <td class="auto-style9">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -99,8 +105,19 @@
             </tr>
             <tr>
                 <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style9">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style7">
+                    <asp:SqlDataSource ID="Sucursal" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                </td>
+                <td class="auto-style9">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

@@ -123,8 +123,23 @@
                                 <br />
                             </td>
                         </AlternatingItemTemplate>--%>
+<%--                        <AlternatingItemTemplate>
+                            <td runat="server" style="background-color: #FFFFFF;color: #284775;">NombreSucursal:
+                                <asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />
+                                <br />
+                                DescripcionSucursal:
+                                <asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' />
+                                <br />
+                                URL_Imagen_Sucursal:
+                                <asp:Label ID="URL_Imagen_SucursalLabel" runat="server" Text='<%# Eval("URL_Imagen_Sucursal") %>' />
+                                <br />
+                                Id_Sucursal:
+                                <asp:Label ID="Id_SucursalLabel" runat="server" Text='<%# Eval("Id_Sucursal") %>' />
+                                <br />
+                            </td>
+                        </AlternatingItemTemplate>--%>
                         <EditItemTemplate>
-                            <td runat="server" style="">NombreSucursal:
+                            <td runat="server" style="background-color: #999999;">NombreSucursal:
                                 <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' />
                                 <br />
                                 DescripcionSucursal:
@@ -143,7 +158,7 @@
                             </td>
                         </EditItemTemplate>
                         <EmptyDataTemplate>
-                            <table runat="server" style="">
+                            <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
                                 <tr>
                                     <td>No se han devuelto datos.</td>
                                 </tr>
@@ -174,11 +189,14 @@
                             </td>
                         </InsertItemTemplate>
                         <ItemTemplate>
-                            <td runat="server" style="">&nbsp;<asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />
+                            <td runat="server" style="background-color: #E0FFFF;color: #333333;"> <asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />
                                 <br />
-                                &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("URL_Imagen_Sucursal") %>' />
+                                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("URL_Imagen_Sucursal") %>' />
                                 <br />
                                 <asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' />
+                                <br />
+                                <br />
+                                <asp:Button ID="BtnSeleccionar" runat="server" Text="Seleccionar" />
                                 <br />
                             </td>
                         </ItemTemplate>
@@ -186,19 +204,27 @@
                             <table runat="server">
                                 <tr runat="server">
                                     <td runat="server">
-                                        <table id="groupPlaceholderContainer" runat="server" border="0" style="">
+                                        <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
                                             <tr id="groupPlaceholder" runat="server">
                                             </tr>
                                         </table>
                                     </td>
                                 </tr>
                                 <tr runat="server">
-                                    <td runat="server" style=""></td>
+                                    <td runat="server" style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF">
+                                        <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
+                                            <Fields>
+                                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                                <asp:NumericPagerField />
+                                                <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                            </Fields>
+                                        </asp:DataPager>
+                                    </td>
                                 </tr>
                             </table>
                         </LayoutTemplate>
                         <SelectedItemTemplate>
-                            <td runat="server" style="">NombreSucursal:
+                            <td runat="server" style="background-color: #E2DED6;font-weight: bold;color: #333333;">NombreSucursal:
                                 <asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />
                                 <br />
                                 DescripcionSucursal:

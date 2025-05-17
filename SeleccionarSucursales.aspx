@@ -88,7 +88,7 @@
                     <asp:TextBox ID="TxtBusqueda" runat="server" Height="22px"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" />
+                    <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -107,7 +107,7 @@
             <tr>
                 <td class="auto-style3">&nbsp;</td>
                 <td colspan="6">
-                    <asp:ListView ID="LVSucursales" runat="server" DataSourceID="Sucursal" DataKeyNames="Id_Sucursal" GroupItemCount="3">
+                    <asp:ListView ID="LVSucursales" runat="server" DataSourceID="Sucursal" DataKeyNames="Id_Sucursal" GroupItemCount="3" OnSelectedIndexChanged="LVSucursales_SelectedIndexChanged">
 <%--                        <AlternatingItemTemplate>
                             <td runat="server" style="">NombreSucursal:
                                 <asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />

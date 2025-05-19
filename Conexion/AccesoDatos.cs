@@ -10,7 +10,7 @@ namespace TP7_GRUPO_5.Conexion
     public class AccesoDatos
     {
         /// PROPIEDADES
-        string rutaNeptuno = @"Data Source=localhost\sqlexpress; Initial Catalog=Neptuno; Integrated Security=True";
+        string rutaNeptuno = @"Data Source=localhost\sqlexpress; Initial Catalog=BDSucursales; Integrated Security=True";
 
         /// METODO CONSTRUCTOR
         public AccesoDatos()

@@ -16,8 +16,34 @@ namespace TP7_GRUPO_5
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
-
+            TxtBusqueda.Text.Trim();
+            Sucursal.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal] WHERE [NombreSucursal] LIKE '" + TxtBusqueda.Text + "%'";
+            /*
+            AccesoDatos accesoDatos = new AccesoDatos();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+            sqlDataAdapter=accesoDatos.ObtenerAdaptador("SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal] WHERE [NombreSucursal] LIKE '" + TxtBusqueda.Text + "%'");
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet, "Sucursal");
+            LVSucursales.DataSource = dataSet.Tables["Sucursal"];
+            LVSucursales.DataBind();
+            */
         }
+
+        /*protected void CargarListView()
+          {
+              DataSet dataSet = new DataSet();
+              SqlConnection sqlConnection = new SqlConnection();
+              AccesoDatos accesoDatos = new AccesoDatos();
+              sqlConnection = accesoDatos.ObtenerConexion();
+
+              SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+              sqlDataAdapter = accesoDatos.ObtenerAdaptador("SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]");
+
+              sqlDataAdapter.Fill(dataSet, "Sucursal");
+              LVSucursales.DataSource = dataSet.Tables["Sucursal"];
+              LVSucursales.DataBind();
+          }*/
+
 
         protected void BtnSeleccionar_Command(object sender, CommandEventArgs e)
         {

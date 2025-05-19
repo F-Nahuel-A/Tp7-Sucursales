@@ -17,7 +17,7 @@
             width: 314px;
         }
         .auto-style4 {
-            width: 463px;
+            width: 381px;
         }
         .auto-style7 {
             width: 338px;
@@ -107,37 +107,7 @@
             <tr>
                 <td class="auto-style3">&nbsp;</td>
                 <td colspan="6">
-                    <asp:ListView ID="LVSucursales" runat="server" DataSourceID="Sucursal" DataKeyNames="Id_Sucursal" GroupItemCount="3" OnSelectedIndexChanged="LVSucursales_SelectedIndexChanged">
-<%--                        <AlternatingItemTemplate>
-                            <td runat="server" style="">NombreSucursal:
-                                <asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />
-                                <br />
-                                DescripcionSucursal:
-                                <asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' />
-                                <br />
-                                URL_Imagen_Sucursal:
-                                <asp:Label ID="URL_Imagen_SucursalLabel" runat="server" Text='<%# Eval("URL_Imagen_Sucursal") %>' />
-                                <br />
-                                Id_Sucursal:
-                                <asp:Label ID="Id_SucursalLabel" runat="server" Text='<%# Eval("Id_Sucursal") %>' />
-                                <br />
-                            </td>
-                        </AlternatingItemTemplate>--%>
-<%--                        <AlternatingItemTemplate>
-                            <td runat="server" style="background-color: #FFFFFF;color: #284775;">NombreSucursal:
-                                <asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />
-                                <br />
-                                DescripcionSucursal:
-                                <asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' />
-                                <br />
-                                URL_Imagen_Sucursal:
-                                <asp:Label ID="URL_Imagen_SucursalLabel" runat="server" Text='<%# Eval("URL_Imagen_Sucursal") %>' />
-                                <br />
-                                Id_Sucursal:
-                                <asp:Label ID="Id_SucursalLabel" runat="server" Text='<%# Eval("Id_Sucursal") %>' />
-                                <br />
-                            </td>
-                        </AlternatingItemTemplate>--%>
+                    <asp:ListView ID="LVSucursales" runat="server" DataSourceID="Sucursal" DataKeyNames="Id_Sucursal" GroupItemCount="3">
                         <EditItemTemplate>
                             <td runat="server" style="background-color: #999999;">NombreSucursal:
                                 <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' />
@@ -196,7 +166,7 @@
                                 <asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' />
                                 <br />
                                 <br />
-                                <asp:Button ID="BtnSeleccionar" runat="server" Text="Seleccionar" />
+                                <asp:Button ID="BtnSeleccionar" runat="server" Text="Seleccionar" CommandArgument='<%# Eval("Id_Sucursal") + "-" + Eval("NombreSucursal") + "-" + Eval("DescripcionSucursal") %>' CommandName="eventoSeleccionar" OnCommand="BtnSeleccionar_Command" />
                                 <br />
                             </td>
                         </ItemTemplate>
@@ -246,11 +216,9 @@
                 <td class="auto-style7">
                     <asp:SqlDataSource ID="Sucursal" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
                 </td>
-                <td class="auto-style9">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td colspan="5">
+                    <asp:Label ID="LblMensaje" runat="server"></asp:Label>
+                </td>
             </tr>
         </table>
     </form>

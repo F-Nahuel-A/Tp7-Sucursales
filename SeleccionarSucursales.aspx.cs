@@ -18,5 +18,21 @@ namespace TP7_GRUPO_5
         {
 
         }
+
+        protected void BtnSeleccionar_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "eventoSeleccionar")
+            {
+                string[] datosSeleccion = e.CommandArgument.ToString().Split('-');
+
+                string idSucursal = datosSeleccion[0];
+                string nombreSucursal = datosSeleccion[1];
+                string descripcionSucursal = datosSeleccion[2];
+
+                LblMensaje.Text = "ID Sucursal: " + idSucursal + "<br />" +
+                                    "Nombre Sucursal: " + nombreSucursal + "<br />" +
+                                    "Descripcion Sucursal: " + descripcionSucursal;
+            }      
+        }
     }
 }

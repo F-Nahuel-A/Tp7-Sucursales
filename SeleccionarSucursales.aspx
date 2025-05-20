@@ -105,7 +105,14 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style3">
+                    <asp:DataList ID="DLProvincia" runat="server" DataSourceID="Provincia">
+                        <ItemTemplate>
+                            <br />
+                            <asp:Button ID="BtnProvincia" runat="server" Text='<%# Eval("DescripcionProvincia") %>' Font-Size="X-Large" OnClick="BtnProvincia_Click" />
+                        </ItemTemplate>
+                    </asp:DataList>
+                </td>
                 <td colspan="6">
                     <asp:ListView ID="LVSucursales" runat="server" DataSourceID="Sucursal" DataKeyNames="Id_Sucursal" GroupItemCount="3">
                         <EditItemTemplate>
@@ -212,9 +219,11 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style3">
+                    <asp:SqlDataSource ID="Provincia" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString3 %>" ProviderName="<%$ ConnectionStrings:BDSucursalesConnectionString3.ProviderName %>" SelectCommand="SELECT [Id_Provincia], [DescripcionProvincia] FROM [Provincia]"></asp:SqlDataSource>
+                </td>
                 <td class="auto-style7">
-                    <asp:SqlDataSource ID="Sucursal" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="Sucursal" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]" ProviderName="<%$ ConnectionStrings:BDSucursalesConnectionString2.ProviderName %>"></asp:SqlDataSource>
                 </td>
                 <td colspan="5">
                     <asp:Label ID="LblMensaje" runat="server"></asp:Label>

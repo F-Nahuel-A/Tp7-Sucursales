@@ -78,6 +78,15 @@ namespace TP7_GRUPO_5
         protected global::System.Web.UI.WebControls.Button BtnBuscar;
 
         /// <summary>
+        /// Control DLProvincia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList DLProvincia;
+
+        /// <summary>
         /// Control LVSucursales.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace TP7_GRUPO_5
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView LVSucursales;
+
+        /// <summary>
+        /// Control Provincia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Provincia;
 
         /// <summary>
         /// Control Sucursal.

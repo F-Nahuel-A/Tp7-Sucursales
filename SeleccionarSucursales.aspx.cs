@@ -60,5 +60,10 @@ namespace TP7_GRUPO_5
                                     "Descripcion Sucursal: " + descripcionSucursal;
             }      
         }
+
+        protected void BtnProvincia_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

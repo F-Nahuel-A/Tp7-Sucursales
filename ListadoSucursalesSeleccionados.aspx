@@ -78,8 +78,11 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style5"></td>
-                <td class="auto-style6"></td>
+                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style6">
+                    <asp:GridView ID="GvMostrarSucursalesSeleccionadas" runat="server" AllowPaging="True" OnPageIndexChanging="GvMostrarSucursalesSeleccionadas_PageIndexChanging">
+                    </asp:GridView>
+                </td>
                 <td class="auto-style6"></td>
                 <td class="auto-style6"></td>
                 <td class="auto-style6"></td>

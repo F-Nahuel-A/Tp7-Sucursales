@@ -100,11 +100,33 @@ namespace TP7_GRUPO_5
             return false;
         }
 
-
-
-        protected void BtnProvincia_Click(object sender, EventArgs e)
+        protected void DLProvincia_ItemCommand(object source, DataListCommandEventArgs e)
         {
+            if (e.CommandName == "EventoProvincia")
+            {
+                string IdProvincia = e.CommandArgument.ToString();
 
+                Sucursal.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal] WHERE Id_ProvinciaSucursal = @IdProvincia";
+                Sucursal.SelectParameters.Clear();
+                Sucursal.SelectParameters.Add("IdProvincia", IdProvincia);
+
+                LVSucursales.DataBind();
+            }
         }
+
+
+       /* protected void BtnProvincia_Comand(object sender, CommandEventArgs e)
+          {
+               if (e.CommandName == "EventoProvincia")
+            {
+                 string IdProvincia = e.CommandArgument.ToString();
+                  Sucursal.SelectCommand = "SELECT [NombreSucursal],[DescripcionSucursal],[Url_Imagen_Sucursal],[Id_Sucursal] FROM [Sucursal] WHERE Id_ProvinciaSucursal= @Id_Provincia";
+                  Sucursal .SelectParameters.Clear();
+                  Sucursal.SelectParameters.Add("Id_Provincia", IdProvincia);
+
+                LVSucursales.DataBind();
+           }
+         }*/
+ 
     }
 }

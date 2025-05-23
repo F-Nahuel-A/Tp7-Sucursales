@@ -106,12 +106,12 @@
             </tr>
             <tr>
                 <td class="auto-style3">
-                    <asp:DataList ID="DLProvincia" runat="server" DataSourceID="Provincia">
-                        <ItemTemplate>
-                            <br />
-                            <asp:Button ID="BtnProvincia" runat="server" Text='<%# Eval("DescripcionProvincia") %>' Font-Size="X-Large" OnClick="BtnProvincia_Click" />
-                        </ItemTemplate>
-                    </asp:DataList>
+                    <asp:DataList ID="DLProvincia" runat="server" DataSourceID="Provincia" OnItemCommand="DLProvincia_ItemCommand">
+    <ItemTemplate>
+        <br />
+        <asp:Button ID="BtnProvincia" runat="server" Text='<%# Eval("DescripcionProvincia") %>' Font-Size="X-Large" CommandName="EventoProvincia" CommandArgument='<%# Eval ("Id_Provincia")%>' />
+    </ItemTemplate>
+</asp:DataList>
                 </td>
                 <td colspan="6">
                     <asp:ListView ID="LVSucursales" runat="server" DataSourceID="Sucursal" DataKeyNames="Id_Sucursal" GroupItemCount="3">

@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 
 namespace TP7_GRUPO_5
@@ -19,8 +20,15 @@ namespace TP7_GRUPO_5
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
-            TxtBusqueda.Text.Trim();
+           string texto = TxtBusqueda.Text.Trim();
+            if (!Regex.IsMatch(texto, @"^[a-zA-Z\s]+$"))
+            {
+                LblMensajeBusqueda.Text = "Por favor, ingresa solo letras. No se permiten nùmeros ni simbolos.";
+            
+                return;
+            }
             Sucursal.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal] WHERE [NombreSucursal] LIKE '" + TxtBusqueda.Text + "%'";
+            LblMensajeBusqueda.Text = "";
             /*
             AccesoDatos accesoDatos = new AccesoDatos();
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();

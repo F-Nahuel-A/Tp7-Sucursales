@@ -25,6 +25,21 @@
         .auto-style9 {
             width: 128px;
         }
+        .auto-style10 {
+            width: 314px;
+            height: 24px;
+        }
+        .auto-style11 {
+            width: 338px;
+            height: 24px;
+        }
+        .auto-style12 {
+            width: 128px;
+            height: 24px;
+        }
+        .auto-style13 {
+            height: 24px;
+        }
     </style>
 </head>
 <body>
@@ -90,19 +105,21 @@
                 <td>
                     <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Label ID="LblMensajeBusqueda" runat="server" BackColor="White" ForeColor="Red"></asp:Label>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style7">
-                    &nbsp;</td>
-                <td class="auto-style9">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style10"></td>
+                <td class="auto-style11">
+                    </td>
+                <td class="auto-style12"></td>
+                <td class="auto-style13"></td>
+                <td class="auto-style13"></td>
+                <td class="auto-style13"></td>
+                <td class="auto-style13"></td>
             </tr>
             <tr>
                 <td class="auto-style3">

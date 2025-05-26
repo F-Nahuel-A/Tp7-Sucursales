@@ -21,6 +21,14 @@ namespace TP7_GRUPO_5
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
            string texto = TxtBusqueda.Text.Trim();
+
+            if (string.IsNullOrEmpty(texto))
+            {
+                Sucursal.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal] WHERE [NombreSucursal] LIKE '" + TxtBusqueda.Text + "%'";
+                LblMensajeBusqueda.Text = "";
+                return;
+            }
+
             if (!Regex.IsMatch(texto, @"^[a-zA-Z\s]+$"))
             {
                 LblMensajeBusqueda.Text = "Por favor, ingresa solo letras. No se permiten nùmeros ni simbolos.";

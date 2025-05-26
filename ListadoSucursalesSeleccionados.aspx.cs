@@ -13,18 +13,16 @@ namespace TP7_GRUPO_5
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (!IsPostBack)
-			{
-				// Carga la lista de sucursales seleccionadas al cargar la página
-				CargarListView();
-            }
+            CargarListView();
         }
 
 		private void CargarListView()
 		{
-            DataTable dataTableSeleccionados = (DataTable)Session["DataTableSeleccionados"];
-			GvMostrarSucursalesSeleccionadas.DataSource = dataTableSeleccionados;
-			GvMostrarSucursalesSeleccionadas.DataBind();
+            if (Session["tabla"] != null)
+            {
+                GvMostrarSucursalesSeleccionadas.DataSource = (DataTable)Session["tabla"];
+                GvMostrarSucursalesSeleccionadas.DataBind();
+            }
         }
 
         protected void GvMostrarSucursalesSeleccionadas_PageIndexChanging(object sender, GridViewPageEventArgs e)

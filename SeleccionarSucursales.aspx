@@ -16,36 +16,36 @@
         .auto-style3 {
             width: 314px;
         }
-        .auto-style4 {
-            width: 381px;
-        }
-        .auto-style7 {
-            width: 338px;
-        }
-        .auto-style9 {
-            width: 128px;
-        }
         .auto-style10 {
             width: 314px;
-            height: 24px;
-        }
-        .auto-style11 {
-            width: 338px;
-            height: 24px;
-        }
-        .auto-style12 {
-            width: 128px;
             height: 24px;
         }
         .auto-style13 {
             height: 24px;
         }
         .auto-style14 {
-            width: 145px;
+            width: 64px;
         }
         .auto-style15 {
             height: 24px;
-            width: 145px;
+            width: 64px;
+        }
+        .auto-style16 {
+            width: 226px;
+        }
+        .auto-style17 {
+            width: 226px;
+            height: 24px;
+        }
+        .auto-style19 {
+            width: 221px;
+            height: 24px;
+        }
+        .auto-style20 {
+            width: 221px;
+        }
+        .auto-style21 {
+            width: 304px;
         }
     </style>
 </head>
@@ -58,7 +58,7 @@
                     <td class="auto-style2">
                         <asp:HyperLink ID="hlListadoSucursales" runat="server" NavigateUrl="~/SeleccionarSucursales.aspx">Listado de Sucursales</asp:HyperLink>
                     </td>
-                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style21">&nbsp;</td>
                     <td>
                         <asp:HyperLink ID="hlMostrarSucursalesSeleccionadas" runat="server" NavigateUrl="~/ListadoSucursalesSeleccionados.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
                     </td>
@@ -71,8 +71,8 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style7">&nbsp;</td>
-                <td class="auto-style9">&nbsp;</td>
+                <td class="auto-style16">&nbsp;</td>
+                <td class="auto-style20">&nbsp;</td>
                 <td class="auto-style14">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -80,10 +80,10 @@
             </tr>
             <tr>
                 <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style7">
+                <td class="auto-style16">
                     <asp:Label ID="lblListadoDeSucursales" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Black" Text="Listado de sucursales"></asp:Label>
                 </td>
-                <td class="auto-style9">&nbsp;</td>
+                <td class="auto-style20">&nbsp;</td>
                 <td class="auto-style14">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -91,9 +91,9 @@
             </tr>
             <tr>
                 <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style7">
+                <td class="auto-style16">
                     &nbsp;</td>
-                <td class="auto-style9">
+                <td class="auto-style20">
                     &nbsp;</td>
                 <td class="auto-style14">
                     &nbsp;</td>
@@ -103,26 +103,24 @@
             </tr>
             <tr>
                 <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style7">
+                <td class="auto-style16">
                     <asp:Label ID="LblBusqueda" runat="server" Text="Busqueda por nombre de sucursal:"></asp:Label>
                 </td>
-                <td class="auto-style9">
-                    <asp:TextBox ID="TxtBusqueda" runat="server" Height="22px"></asp:TextBox>
+                <td class="auto-style20">
+                    <asp:TextBox ID="TxtBusqueda" runat="server" Height="22px" Width="204px"></asp:TextBox>
                 </td>
                 <td class="auto-style14">
                     <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
                 </td>
-                <td>
+                <td colspan="3">
                     <asp:RegularExpressionValidator ID="revBuscar" runat="server" ControlToValidate="TxtBusqueda" ErrorMessage="No se permiten caracteres especiales" ValidationExpression="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"></asp:RegularExpressionValidator>
                 </td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style10"></td>
-                <td class="auto-style11">
+                <td class="auto-style17">
                     </td>
-                <td class="auto-style12"></td>
+                <td class="auto-style19"></td>
                 <td class="auto-style15"></td>
                 <td class="auto-style13"></td>
                 <td class="auto-style13"></td>
@@ -246,11 +244,10 @@
                 <td class="auto-style3">
                     <asp:SqlDataSource ID="Provincia" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString3 %>" ProviderName="<%$ ConnectionStrings:BDSucursalesConnectionString3.ProviderName %>" SelectCommand="SELECT [Id_Provincia], [DescripcionProvincia] FROM [Provincia]"></asp:SqlDataSource>
                 </td>
-                <td class="auto-style7">
+                <td class="auto-style16">
                     &nbsp;</td>
                 <td colspan="5">
-                    <asp:Label ID="LblMensaje" runat="server"></asp:Label>
-                </td>
+                    &nbsp;</td>
             </tr>
         </table>
     </form>

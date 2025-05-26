@@ -10,7 +10,7 @@ namespace TP7_GRUPO_5.Conexion
     public class AccesoDatos
     {
         /// PROPIEDADES
-        string rutaNeptuno = @"Data Source=localhost\sqlexpress; Initial Catalog=BDSucursales; Integrated Security=True";
+        string rutaBD = @"Data Source=localhost\sqlexpress; Initial Catalog=BDSucursales; Integrated Security=True";
 
         /// METODO CONSTRUCTOR
         public AccesoDatos()
@@ -21,7 +21,7 @@ namespace TP7_GRUPO_5.Conexion
         /// METODOS
         public SqlConnection ObtenerConexion()
         {
-            SqlConnection sqlConnection = new SqlConnection(rutaNeptuno);
+            SqlConnection sqlConnection = new SqlConnection(rutaBD);
             try
             {
                 sqlConnection.Open();

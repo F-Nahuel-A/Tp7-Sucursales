@@ -10,21 +10,24 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style2 {
-            width: 314px;
-        }
-        .auto-style3 {
-            width: 463px;
-        }
         .auto-style4 {
             width: 202px;
         }
         .auto-style5 {
-            width: 314px;
+            width: 122px;
             height: 23px;
         }
         .auto-style6 {
             height: 23px;
+        }
+        .auto-style7 {
+            width: 147px;
+        }
+        .auto-style8 {
+            width: 122px;
+        }
+        .auto-style9 {
+            width: 121px;
         }
     </style>
 </head>
@@ -33,11 +36,11 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style4">
                         <asp:HyperLink ID="hlListadoSucursales" runat="server" NavigateUrl="~/SeleccionarSucursales.aspx">Listado de Sucursales</asp:HyperLink>
                     </td>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                     <td>
                         <asp:HyperLink ID="hlMostrarSucursalesSeleccionadas" runat="server" NavigateUrl="~/ListadoSucursalesSeleccionados.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
                     </td>
@@ -49,7 +52,7 @@
         </div>
         <table class="auto-style1">
             <tr>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style8">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -58,7 +61,7 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style8">&nbsp;</td>
                 <td>
                     <asp:Label ID="lblMostrarSucursalesSeleccionadas" runat="server" Font-Bold="True" Font-Overline="False" Font-Size="X-Large" Text="Mostrar sucursales seleccionadas"></asp:Label>
                 </td>
@@ -69,7 +72,7 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style8">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -79,18 +82,13 @@
             </tr>
             <tr>
                 <td class="auto-style5">&nbsp;</td>
-                <td class="auto-style6">
-                    <asp:GridView ID="GvMostrarSucursalesSeleccionadas" runat="server" AllowPaging="True" OnPageIndexChanging="GvMostrarSucursalesSeleccionadas_PageIndexChanging">
+                <td class="auto-style6" colspan="6">
+                    <asp:GridView ID="GvMostrarSucursalesSeleccionadas" runat="server" AllowPaging="True" OnPageIndexChanging="GvMostrarSucursalesSeleccionadas_PageIndexChanging" PageSize="3">
                     </asp:GridView>
                 </td>
-                <td class="auto-style6"></td>
-                <td class="auto-style6"></td>
-                <td class="auto-style6"></td>
-                <td class="auto-style6"></td>
-                <td class="auto-style6"></td>
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style8">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -99,7 +97,7 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style8">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -108,7 +106,7 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style8">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

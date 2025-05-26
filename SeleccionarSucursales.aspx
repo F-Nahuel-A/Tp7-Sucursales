@@ -131,7 +131,7 @@
 </asp:DataList>
                 </td>
                 <td colspan="6">
-                    <asp:ListView ID="LVSucursales" runat="server" DataSourceID="Sucursal" DataKeyNames="Id_Sucursal" GroupItemCount="3">
+                    <asp:ListView ID="LVSucursales" runat="server" DataKeyNames="Id_Sucursal" GroupItemCount="3" OnPagePropertiesChanging="LVSucursales_PagePropertiesChanging">
                         <EditItemTemplate>
                             <td runat="server" style="background-color: #999999;">NombreSucursal:
                                 <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' />

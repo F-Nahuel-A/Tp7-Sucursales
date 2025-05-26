@@ -7,6 +7,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using System.Configuration;
+using TP7_GRUPO_5.Conexion;
 
 
 namespace TP7_GRUPO_5
@@ -14,56 +16,19 @@ namespace TP7_GRUPO_5
 	public partial class SeleccionarSucursales : System.Web.UI.Page
 	{
 		protected void Page_Load(object sender, EventArgs e)
-		{
-
-		}
+        {
+            GestiónSucursal gestiónSucursal = new GestiónSucursal();
+            if (!IsPostBack)
+            {
+                gestiónSucursal.CargarLV(LVSucursales);
+            }
+        }
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
-           string texto = TxtBusqueda.Text.Trim();
-
-            if (string.IsNullOrEmpty(texto))
-            {
-                Sucursal.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal] WHERE [NombreSucursal] LIKE '" + TxtBusqueda.Text + "%'";
-                LblMensajeBusqueda.Text = "";
-                return;
-            }
-
-            if (!Regex.IsMatch(texto, @"^[a-zA-Z\s]+$"))
-            {
-                LblMensajeBusqueda.Text = "Por favor, ingresa solo letras. No se permiten nùmeros ni simbolos.";
-            
-                return;
-            }
-            Sucursal.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal] WHERE [NombreSucursal] LIKE '" + TxtBusqueda.Text + "%'";
-            LblMensajeBusqueda.Text = "";
-            /*
-            AccesoDatos accesoDatos = new AccesoDatos();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
-            sqlDataAdapter=accesoDatos.ObtenerAdaptador("SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal] WHERE [NombreSucursal] LIKE '" + TxtBusqueda.Text + "%'");
-            DataSet dataSet = new DataSet();
-            sqlDataAdapter.Fill(dataSet, "Sucursal");
-            LVSucursales.DataSource = dataSet.Tables["Sucursal"];
-            LVSucursales.DataBind();
-            */
+            GestiónSucursal gestiónSucursal = new GestiónSucursal();
+            gestiónSucursal.FiltrarLV(LVSucursales, TxtBusqueda);
         }
-
-        /*protected void CargarListView()
-          {
-              DataSet dataSet = new DataSet();
-              SqlConnection sqlConnection = new SqlConnection();
-              AccesoDatos accesoDatos = new AccesoDatos();
-              sqlConnection = accesoDatos.ObtenerConexion();
-
-              SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
-              sqlDataAdapter = accesoDatos.ObtenerAdaptador("SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]");
-
-              sqlDataAdapter.Fill(dataSet, "Sucursal");
-              LVSucursales.DataSource = dataSet.Tables["Sucursal"];
-              LVSucursales.DataBind();
-          }*/
-
-
         protected void BtnSeleccionar_Command(object sender, CommandEventArgs e)
         {
             if (e.CommandName == "eventoSeleccionar")
@@ -118,31 +83,21 @@ namespace TP7_GRUPO_5
 
         protected void DLProvincia_ItemCommand(object source, DataListCommandEventArgs e)
         {
+            GestiónSucursal gestiónSucursal = new GestiónSucursal();
             if (e.CommandName == "EventoProvincia")
             {
                 string IdProvincia = e.CommandArgument.ToString();
 
-                Sucursal.SelectCommand = "SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal] WHERE Id_ProvinciaSucursal = @IdProvincia";
-                Sucursal.SelectParameters.Clear();
-                Sucursal.SelectParameters.Add("IdProvincia", IdProvincia);
-
-                LVSucursales.DataBind();
+                gestiónSucursal.FiltrarPorProvinciaLV(LVSucursales,IdProvincia);
             }
         }
 
+        protected void LVSucursales_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
+        {
+            GestiónSucursal gestiónSucursal = new GestiónSucursal();
+            (LVSucursales.FindControl("DataPager1") as DataPager).SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+            gestiónSucursal.CargarLV(LVSucursales);
+        }
 
-       /* protected void BtnProvincia_Comand(object sender, CommandEventArgs e)
-          {
-               if (e.CommandName == "EventoProvincia")
-            {
-                 string IdProvincia = e.CommandArgument.ToString();
-                  Sucursal.SelectCommand = "SELECT [NombreSucursal],[DescripcionSucursal],[Url_Imagen_Sucursal],[Id_Sucursal] FROM [Sucursal] WHERE Id_ProvinciaSucursal= @Id_Provincia";
-                  Sucursal .SelectParameters.Clear();
-                  Sucursal.SelectParameters.Add("Id_Provincia", IdProvincia);
-
-                LVSucursales.DataBind();
-           }
-         }*/
- 
     }
 }

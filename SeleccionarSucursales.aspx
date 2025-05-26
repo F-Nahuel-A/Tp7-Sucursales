@@ -40,6 +40,13 @@
         .auto-style13 {
             height: 24px;
         }
+        .auto-style14 {
+            width: 145px;
+        }
+        .auto-style15 {
+            height: 24px;
+            width: 145px;
+        }
     </style>
 </head>
 <body>
@@ -66,7 +73,7 @@
                 <td class="auto-style3">&nbsp;</td>
                 <td class="auto-style7">&nbsp;</td>
                 <td class="auto-style9">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style14">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -77,7 +84,7 @@
                     <asp:Label ID="lblListadoDeSucursales" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Black" Text="Listado de sucursales"></asp:Label>
                 </td>
                 <td class="auto-style9">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style14">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -88,7 +95,7 @@
                     &nbsp;</td>
                 <td class="auto-style9">
                     &nbsp;</td>
-                <td>
+                <td class="auto-style14">
                     &nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -102,11 +109,11 @@
                 <td class="auto-style9">
                     <asp:TextBox ID="TxtBusqueda" runat="server" Height="22px"></asp:TextBox>
                 </td>
-                <td>
+                <td class="auto-style14">
                     <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
                 </td>
                 <td>
-                    <asp:Label ID="LblMensajeBusqueda" runat="server" BackColor="White" ForeColor="Red"></asp:Label>
+                    <asp:RegularExpressionValidator ID="revBuscar" runat="server" ControlToValidate="TxtBusqueda" ErrorMessage="No se permiten caracteres especiales" ValidationExpression="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"></asp:RegularExpressionValidator>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -116,7 +123,7 @@
                 <td class="auto-style11">
                     </td>
                 <td class="auto-style12"></td>
-                <td class="auto-style13"></td>
+                <td class="auto-style15"></td>
                 <td class="auto-style13"></td>
                 <td class="auto-style13"></td>
                 <td class="auto-style13"></td>
@@ -240,8 +247,7 @@
                     <asp:SqlDataSource ID="Provincia" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString3 %>" ProviderName="<%$ ConnectionStrings:BDSucursalesConnectionString3.ProviderName %>" SelectCommand="SELECT [Id_Provincia], [DescripcionProvincia] FROM [Provincia]"></asp:SqlDataSource>
                 </td>
                 <td class="auto-style7">
-                    <asp:SqlDataSource ID="Sucursal" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]" ProviderName="<%$ ConnectionStrings:BDSucursalesConnectionString2.ProviderName %>"></asp:SqlDataSource>
-                </td>
+                    &nbsp;</td>
                 <td colspan="5">
                     <asp:Label ID="LblMensaje" runat="server"></asp:Label>
                 </td>

@@ -78,13 +78,13 @@ namespace TP7_GRUPO_5
         protected global::System.Web.UI.WebControls.Button BtnBuscar;
 
         /// <summary>
-        /// Control LblMensajeBusqueda.
+        /// Control revBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMensajeBusqueda;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revBuscar;
 
         /// <summary>
         /// Control DLProvincia.
@@ -112,15 +112,6 @@ namespace TP7_GRUPO_5
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource Provincia;
-
-        /// <summary>
-        /// Control Sucursal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Sucursal;
 
         /// <summary>
         /// Control LblMensaje.

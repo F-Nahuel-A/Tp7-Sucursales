@@ -17,6 +17,7 @@ namespace TP7_GRUPO_5
 	{
 		protected void Page_Load(object sender, EventArgs e)
         {
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             GestiónSucursal gestiónSucursal = new GestiónSucursal();
             if (!IsPostBack)
             {

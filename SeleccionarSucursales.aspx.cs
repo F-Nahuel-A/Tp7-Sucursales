@@ -28,7 +28,7 @@ namespace TP7_GRUPO_5
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
-            gestionSucursales.FiltrarLV(LVSucursales, TxtBusqueda);
+            gestionSucursales.FiltrarLV(LVSucursales, TxtBusqueda.Text.Trim());
         }
 
         protected void BtnSeleccionar_Command(object sender, CommandEventArgs e)

@@ -29,11 +29,11 @@ namespace TP7_GRUPO_5.Conexion
             }
         }
 
-        public void FiltrarLV(ListView listView, TextBox textBox)
+        public void FiltrarLV(ListView listView, String nombreSucursal)
         {
             AccesoDatos accesoDatos = new AccesoDatos();
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
-            sqlDataAdapter = accesoDatos.ObtenerAdaptador("SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal] WHERE [NombreSucursal] LIKE '" + textBox.Text + "%'");
+            sqlDataAdapter = accesoDatos.ObtenerAdaptador("SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]" + "WHERE [NombreSucursal]" + "LIKE '" + nombreSucursal + "%'");
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet, "Sucursal");
             listView.DataSource = dataSet.Tables["Sucursal"];

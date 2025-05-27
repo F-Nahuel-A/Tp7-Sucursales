@@ -131,7 +131,7 @@
                     <asp:DataList ID="DLProvincia" runat="server" DataSourceID="Provincia" OnItemCommand="DLProvincia_ItemCommand">
     <ItemTemplate>
         <br />
-        <asp:Button ID="BtnProvincia" runat="server" Text='<%# Eval("DescripcionProvincia") %>' Font-Size="X-Large" CommandName="EventoProvincia" CommandArgument='<%# Eval ("Id_Provincia")%>' />
+        <asp:Button ID="BtnProvincia" runat="server" Text='<%# Eval("DescripcionProvincia") %>' Font-Size="X-Large" CommandName="EventoProvincia" CommandArgument='<%# Eval ("Id_Provincia")%>'/>
     </ItemTemplate>
 </asp:DataList>
                 </td>
